@@ -9,7 +9,7 @@ const samples = [
 const saleProducts = Array.from({ length: 16 }, (_, index) => ({
   ...samples[index % samples.length],
   id: index + 1,
-  image: '/images/products/food_1.jpg',
+  image: `${import.meta.env.BASE_URL}images/products/food_1.jpg`,
   imageAlt: '木の升に盛られた白米と稲穂',
   category: '食品',
 }))

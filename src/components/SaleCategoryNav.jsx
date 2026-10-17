@@ -33,7 +33,7 @@ function SaleCategoryNav({ onCategoryChange }) {
               <span
                 className="category-nav__icon"
                 aria-hidden="true"
-                style={{ '--category-icon': `url("/svg/${category.id}.svg")` }}
+                style={{ '--category-icon': `url("${import.meta.env.BASE_URL}svg/${category.id}.svg")` }}
               />
               <span className="category-nav__text">{category.label}</span>
             </label>
