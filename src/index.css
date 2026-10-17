@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+/* 共通変数 */
+:root {
+    --color-red: #E81717;
+    --color-yellow: #FFE200;
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-gray: #F4F4F4;
+    --color-blue: #0076FF;
+    --color-text: #222222;
+    --color-GrayText: #A2A2A2;
+    --color-muted: #777777;
+    --color-border: #DDDDDD;
+
+    /* 共通フォントサイズ */
+    --font-size-12: 0.75rem;
+    --font-size-14: 0.875rem;
+    --font-size-16: 1rem;
+    --font-size-18: 1.125rem;
+    --font-size-20: 1.25rem;
+
+}
+
+/* 日本語・英数字フォント（太さ400） */
+@font-face {
+    font-family: "Noto Sans JP";
+    src: url("/fonts/noto-sans-jp-v57-japanese_latin-regular.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+}
+/* 日本語・英数字フォント（太さ500） */
+@font-face {
+    font-family: "Noto Sans JP";
+    src: url("/fonts/noto-sans-jp-v57-japanese_latin-500.woff2") format("woff2");
+    font-weight: 500;
+    font-display: swap;
+}
+/* 日本語・英数字フォント（太さ600） */
+@font-face {
+    font-family: "Noto Sans JP";
+    src: url("/fonts/noto-sans-jp-v57-japanese_latin-600.woff2") format("woff2");
+    font-weight: 600;
+    font-display: swap;
+}
+/* 日本語・英数字フォント（太さ700） */
+@font-face {
+    font-family: "Noto Sans JP";
+    src: url("/fonts/noto-sans-jp-v57-japanese_latin-700.woff2") format("woff2");
+    font-weight: 700;
+    font-display: swap;
+}
+
+/* 全要素 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* リンク */
+a {
+    color: inherit; /* デフォルトの青文字をやめて、親要素の文字色を継承する */
+    text-decoration: none; /* デフォルトの下線を消す */
+    transition: opacity 0.2s ease; /* ホバー時のopacity変化を滑らかにする */
+
+    /* リンクのホバー */
+    &:hover {
+        opacity: 0.7; /* ホバー時に少し薄くして、反応していることを示す */
+    }
+}
+
+/* リスト */
+ul,
+li {
+    list-style: none; /* デフォルトの黒丸・番号を消す */
+}
+
+/* 画像 */
+img {
+    display: block; /* デフォルトはinlineなので、画像下にできる余計な隙間をなくす */
+    max-width: 100%; /* 親要素の幅を超えないようにする(レスポンシブ対応の基本) */
+    height: auto; /* 幅に合わせて高さを自動調整し、縦横比を保つ */
+}
+
+/* フォーム部品 */
+input,
+textarea,
+button,
+select {
+    font: inherit; /* フォーム部品はデフォルトで親要素のフォントを継承しないため明示的に指定 */
+    color: inherit;
+}
+
+/* テキストエリア */
+textarea {
+    resize: vertical; /* 横方向のリサイズを禁止し、縦方向だけ可能にする(横に伸びてレイアウトが崩れるのを防ぐ) */
+}
+
+/* ボタン */
+button {
+    background: none; /* デフォルトの灰色の背景を消す */
+    border: none; /* デフォルトの枠線を消す */
+    cursor: pointer; /* クリックできることが分かるよう指マークにする */
+}
+
+/* ラベル */
+label {
+    display: block; /* デフォルトはinlineなので、1行で独立させて下の入力欄と縦に並べやすくする */
+    cursor: pointer; /* クリックで対応するinputにフォーカスが当たることを示す */
+}
+
+/* インライン要素 */
+span {
+    display: inline-block; /* デフォルトのinlineのままだとpaddingやline-heightが効きにくいため、バッジなどに使いやすくしておく */
+}
+
+/* SVG画像 */
+svg {
+    display: block; /* デフォルトはinlineなので、imgと同じく下にできる余計な隙間をなくす */
+    flex-shrink: 0; /* flexの横並びの中で、他の要素に押されて潰れないようにする */
+}
+
+/* ページ全体 */
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+/* 画面幅950px以下の基本文字サイズ */
+/* @media (max-width: 650px) {
+    html {
+        font-size: 14px;
+    }
+} */
+
+/* ページ本文 */
+body {
+    min-width: 320px;
+    color: var(--color-text);
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 400;
+    background-color: var(--color-white);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.7; /* 行間を広めに取って読みやすくする(本文は1.5〜1.8あたりが目安) */
+}
+
+/* 汎用コンテナ・段落 */
+div ,p {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* 第1階層の見出し */
+h1 {
+    font-weight: 700;
+}
+
+/* 第2階層の見出し */
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* ラジオボタン */
+input[type="radio"] {
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* ラジオボタンのフォーカス枠 */
+label:has(input[type="radio"]:focus-visible) {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}

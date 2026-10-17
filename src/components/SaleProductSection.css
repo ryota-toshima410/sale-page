@@ -1,0 +1,55 @@
+/* 商品一覧エリア全体 */
+.product-section {
+    display: flex;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+/* 商品件数・並び替えエリア */
+.product-section__toolbar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+/* 商品件数 */
+.product-section__count {
+    font-size: var(--font-size-14);
+}
+
+/* 商品件数の数字 */
+.product-section__count span {
+    font-size: 1.8em;
+    margin-right: .2em;
+}
+
+/* 並び替えメニュー */
+.product-section__sort {
+    appearance: none;
+    background-image: url("/svg/sort.svg"), url("/svg/arrow_down.svg");
+    background-repeat: no-repeat;
+    background-position: left .75rem center, right .75rem center;
+    background-size: 20px 20px, 20px 20px;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    border-radius: 5px;
+    font-size: var(--font-size-16);
+}
+
+/* 注意書き */
+.product-section__note {
+    font-size: var(--font-size-14);
+}
+
+/* 画面幅900px以下 */
+@media (max-width: 900px) {
+
+    /* 商品一覧エリア全体 */
+    .product-section {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+

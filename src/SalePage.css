@@ -1,0 +1,12 @@
+/* ページ全体のレイアウト用。
+   共通カラー・フォント・リセット・基本文字設定は index.css に記載。 */
+
+/* フッター */
+.sale-page__footer {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+/* フッター テキスト */
+.sale-page__copyright {
+    font-size: var(--font-size-12);
+}

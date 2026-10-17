@@ -1,0 +1,207 @@
+/* セール告知全体 */
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-red);
+    color: var(--color-white);
+    text-align: center;
+    gap: 1rem;
+    padding: 2rem 2rem 4rem;
+    background:
+    repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06) 0px,
+    rgba(255, 255, 255, 0.06) 22px,
+    transparent 0px,
+    transparent 50px
+    ),
+    var(--color-red)
+}
+
+/* 告知コンテンツ全体 */
+.hero__content {
+    position: relative;
+    font-size: 1.6rem; /* heroのフォントサイズの基準。変数化しない */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* 告知テキスト */
+.hero__text {
+    font-size: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+/* 割引表示 */
+.hero__lead {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: -2.5em;
+}
+
+/* 「最大」の文字 */
+.hero__lead-label {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 2.0em;
+    margin-right: -.3em;
+    margin-top: .3em;
+}
+
+/* 割引率の数字 */
+.hero__lead-value {
+    font-size: 5.8em;
+    color: var(--color-yellow);
+    font-weight: 700;
+}
+
+/* 「%・OFF」のグループ */
+.hero__lead-suffix {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    line-height: 1;
+}
+
+/* 「%」の文字 */
+.hero__lead-unit {
+    font-size: 2.4em;
+    margin-top: .2em;
+}
+
+/* 「OFF」の文字 */
+.hero__lead-off {
+    font-size: 2em;
+}
+
+/* 「SALE」の見出し */
+.hero__title {
+    font-weight: 900;
+    line-height: 1;
+    font-size: 5.5em;
+    color: var(--color-yellow);
+    margin-bottom: .1em;
+}
+
+/* 開催期間 */
+.hero__date {
+    margin: 0;
+    background: var(--color-white);
+    color: var(--color-red);
+    padding: .2em 1.5em;
+    font-weight: 600;
+    font-size: .8em;
+}
+
+/* 開催期間の数字 */
+.hero__date-number {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* 画像エリア */
+.hero__visual {
+    position: relative;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 380px;
+    min-width: 0;
+    margin-bottom: -3rem;
+}
+
+/* 送料無料マーク */
+.hero__shipping {
+    display: grid;
+    align-content: center;
+    position: absolute;
+    top: 0;
+    left: 7.5rem;
+    transform: rotate(-15deg);
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    background-color: var(--color-yellow);
+    color: var(--color-red);
+    font-weight: 700;
+    text-align: center;
+    font-size: 1.8rem;
+    line-height: 1.2;
+    z-index: 1;
+}
+
+/* メイン画像 */
+.hero__image {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 10;
+}
+
+/* 画面幅950px以下 */
+@media (max-width: 950px) {
+
+    /* セール告知全体 */
+    .hero {
+        padding: 0 0 2.5rem 0;
+    }
+
+    /* 告知コンテンツ全体 */
+    .hero__content {
+        font-size: 1.3rem;
+    }
+    
+    /* 画像エリア */
+    .hero__visual {
+        position: absolute;
+        right: 0;
+        width: 100px;
+    }
+
+    /* 送料無料マーク */
+    .hero__shipping {
+        left: 20%;
+        bottom: 85%;
+        top: auto;
+        transform: rotate(10deg);
+        font-size: 1.4rem;
+    }
+}
+
+/* 画面幅500px以下 */
+@media (max-width: 500px) {
+
+    /* セール告知全体 */
+    .hero {
+        padding: 0rem 0 2rem;
+        margin-top: -1rem;
+    }
+
+    /* 告知コンテンツ全体 */
+    .hero__content {
+        font-size: 4.3vw;
+    }
+    
+    /* 開催期間 */
+    .hero__date {
+        font-size: 3.5vw;
+    }
+
+    /* 画像エリア */
+    .hero__visual {
+        width: 22vw;
+    }
+
+    /* 送料無料マーク */
+    .hero__shipping {
+        font-size: 4.5vw;
+    }
+}

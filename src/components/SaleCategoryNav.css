@@ -1,0 +1,89 @@
+/* カテゴリーナビ全体 */
+.category-nav {
+    min-width: 180px;
+}
+
+/* カテゴリー名 */
+.category-nav__text {
+    font-size: var(--font-size-14);
+}
+
+/* カテゴリー一覧 */
+.category-nav__list {
+    display: flex;
+    flex-direction: column;
+}
+
+/* カテゴリー項目 */
+.category-nav__item {
+    margin-bottom: 1rem;
+}
+
+/* カテゴリー選択ラベル */
+.category-nav__label {
+    display: flex;
+    align-items: center;
+    border-left: 4px solid transparent;
+    padding-left: .75rem;
+    cursor: pointer;
+}
+
+/* 選択中のカテゴリー */
+.category-nav__label:has(.category-nav__radio:checked) {
+    color: var(--color-red);
+    border-left-color: var(--color-red);
+}
+
+/* カテゴリーアイコン */
+.category-nav__icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    margin-right: .5rem;
+    background-color: currentColor;
+    mask-image: var(--category-icon);
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+}
+
+/* 画面幅900px以下 */
+@media (max-width: 900px) {
+    /* カテゴリーナビ全体 */
+    .category-nav {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    /* カテゴリー一覧 */
+    .category-nav__list {
+        flex-direction: row;
+        gap: .5rem;
+        overflow-x: auto;
+    }
+
+    /* カテゴリー項目 */
+    .category-nav__item {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+    /* カテゴリー選択ラベル */
+    .category-nav__label {
+        padding: 0.3em 1em;
+        border: 1px solid var(--color-black);
+        border-radius: 10000px;
+    }
+
+    /* カテゴリーアイコン */
+    .category-nav__icon {
+        display: none; /* カテゴリーアイコンを非表示 */
+    }
+
+    /* 選択中のカテゴリー */
+    .category-nav__label:has(.category-nav__radio:checked) {
+        border-color: var(--color-red);
+        background-color: var(--color-red);
+        color: var(--color-white);
+    }
+}
