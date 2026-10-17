@@ -21,11 +21,22 @@
 
 /* カテゴリー選択ラベル */
 .category-nav__label {
+    position: relative;
     display: flex;
     align-items: center;
     border-left: 4px solid transparent;
     padding-left: .75rem;
     cursor: pointer;
+}
+
+/* カテゴリー選択のラジオボタン */
+.category-nav__radio {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%); /* ラジオボタン本体を視覚的に非表示 */
+    white-space: nowrap;
 }
 
 /* 選択中のカテゴリー */
