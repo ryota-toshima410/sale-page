@@ -71,6 +71,7 @@
         flex-direction: row;
         gap: .5rem;
         overflow-x: auto;
+        padding: 0 1rem;
     }
 
     /* カテゴリー項目 */
