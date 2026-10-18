@@ -5,6 +5,7 @@ import './SaleProductCard.css'
 // 親から商品情報を props として受け取る。値を省略した場合は、ここに書いた初期値を使う。
 // image は画像のパス、imageAlt は画像を説明する代替テキスト。
 // price は販売価格、originalPrice は通常価格（どちらも数値で渡す）。
+// discount は割引率。省略した場合は価格から自動計算する。
 // href は商品のリンク先。onDetails はリンクをクリックしたときの処理。
 function SaleProductCard({
   name = '国産米 5kg',
@@ -12,17 +13,17 @@ function SaleProductCard({
   imageAlt = '木の升に盛られた白米と稲穂',
   price = 2990,
   originalPrice = 5980,
+  discount: discountRate,
   category = '食品',
   href = '#',
   onDetails,
 }) {
   // false は未選択、true はお気に入り。ページを再読み込みすると初期値に戻る。
   const [isFavorite, setIsFavorite] = useState(false)
-  // 通常価格より安い場合に割引率を計算し、Math.round で整数に四捨五入する。
-  // 例：販売価格2990円・通常価格5980円なら50。それ以外は0として割引表示を省く。
-  const discount = originalPrice > price
+  // 入力された割引率を優先し、省略時は通常価格と販売価格から自動計算する。
+  const discount = discountRate ?? (originalPrice > price
     ? Math.round((1 - price / originalPrice) * 100)
-    : 0
+    : 0)
 
   return (
     <article className="product-card">

@@ -11,7 +11,7 @@ const categories = [
   { id: 'stationery', label: '文房具・雑貨' },
 ]
 
-function SaleCategoryNav({ onCategoryChange }) {
+function SaleCategoryNav({ activeCategory = 'all', onCategoryChange }) {
   return (
     <nav className="category-nav" aria-label="商品カテゴリー">
       <ul className="category-nav__list">
@@ -26,7 +26,7 @@ function SaleCategoryNav({ onCategoryChange }) {
                 type="radio"
                 name="category"
                 value={category.id}
-                defaultChecked={category.id === 'all'}
+                checked={category.id === activeCategory}
                 onChange={() => onCategoryChange?.(category.id)}
               />
               {/* SVG をマスクとして使い、アイコンの色を CSS で変更できるようにする。 */}

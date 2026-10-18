@@ -97,6 +97,13 @@
 /* 商品名 */
 .product-card__name {
     font-size: var(--font-size-16);
+    line-height: 1.5;
+    min-height: 3em; /* 商品名2行分の高さ */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    overflow-wrap: anywhere;
 }
 /* 価格エリア */
 .product-card__prices {
