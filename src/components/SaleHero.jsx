@@ -31,8 +31,8 @@ function SaleHero() {
 
         <div className="hero__visual">
             <picture>
-              <source media="(max-width: 950px)" srcSet={`${import.meta.env.BASE_URL}images/cart.png`} />
-              <img className="hero__image" src={`${import.meta.env.BASE_URL}images/hero.png`} alt="お買い物をイメージしたイラスト" />
+              <source media="(max-width: 950px)" srcSet={`${import.meta.env.BASE_URL}images/hero/cart.png`} />
+              <img className="hero__image" src={`${import.meta.env.BASE_URL}images/hero/hero.png`} alt="お買い物をイメージしたイラスト" />
             </picture>
             <p className="hero__shipping">送料<br/>無料</p>
         </div>

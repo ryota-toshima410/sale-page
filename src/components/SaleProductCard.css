@@ -25,6 +25,13 @@
     opacity: .9;
 }
 
+/* 商品画像 */
+.product-card__image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
 /* 割引率ラベル */
 .product-card__discount {
     position: absolute;
