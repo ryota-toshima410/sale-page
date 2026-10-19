@@ -9,7 +9,7 @@ import './SaleProductCard.css'
 // href は商品のリンク先。onDetails はリンクをクリックしたときの処理。
 function SaleProductCard({
   name = '国産米 5kg',
-  image = `${import.meta.env.BASE_URL}images/products/food_1.jpg`,
+  image = `${import.meta.env.BASE_URL}images/products/food_1.jpg?v=${import.meta.env.VITE_ASSET_VERSION}`,
   imageAlt = '木の升に盛られた白米と稲穂',
   price = 2990,
   originalPrice = 5980,
